@@ -6,7 +6,8 @@ module.exports = {
     context: path.resolve(__dirname, 'src/main/react'),
     entry: {
         employee: './employee/employee.js',
-        department:'./department/department.js'
+        department:'./department/department.js',
+        attendance: './attendance/attendance.js'
     },
     devtool: 'sourcemaps',
     cache: true,

@@ -348,6 +348,49 @@
         calendar.render();
     });
 
+
+    document.addEventListener('DOMContentLoaded', async function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {},
+        events: []
+    });
+
+    async function fetchApprovedLeaves() {
+        try {
+            const response = await fetch('/hrm/attendance/approvedLeaves');
+            const approvedLeaves = await response.json();
+
+            const events = approvedLeaves.flatMap(leave => {
+                const eventDays = [];
+                const currentDate = new Date(leave.startDate);
+                const endDate = new Date(leave.endDate);
+
+                while (currentDate <= endDate) {
+                    eventDays.push({
+                        title: leave.employeeName,
+                        start: new Date(currentDate),
+                        backgroundColor: '#5DADE2',
+                        borderColor: '#5DADE2',
+                        allDay: true
+                    });
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+                return eventDays;
+            });
+
+            calendar.addEventSource(events);
+        } catch (error) {
+            console.error('Error fetching approved leaves:', error);
+        }
+    }
+
+    calendar.render();
+    await fetchApprovedLeaves();
+});
+
+
 </script>
 
 </html>
