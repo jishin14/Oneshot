@@ -36,7 +36,7 @@ public class SecurityConfig {
 
         http.authorizeRequests(authorize -> authorize
                 .antMatchers("/","/common/login","/common/loginForm","/common/js/**","/common/css/**","/common/img/**").permitAll() //로그인페이지는 로그인 안해도 접근 가능하게함
-                .antMatchers("/hrm/attendance/**", "/hrm/attendance.do").permitAll() // 근태관리 페이지는 모든 사용자 접근 가능
+                .antMatchers("/contractApp/**","/inventoryApp/**","/salesApp/**","/productApp/**","/homeApp/**").permitAll()
                 .antMatchers("/hrm/**").hasRole("1")
                 .antMatchers("/inventory/**").hasRole("2")
                 .antMatchers("/sales/**").hasRole("3")
