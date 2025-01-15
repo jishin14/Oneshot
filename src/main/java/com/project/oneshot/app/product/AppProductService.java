@@ -22,9 +22,5 @@ public interface AppProductService {
 
     ProductVO getProductContent(int productNo);
 
-//    int checkProductName(String productName);
-
-//    void postProduct(ProductVO vo);
-
 }
 

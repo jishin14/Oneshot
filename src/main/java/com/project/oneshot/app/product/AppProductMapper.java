@@ -20,8 +20,6 @@ public interface AppProductMapper {
 
     List<CategoryVO> getCategoryList();
 
-//    int checkProductName(String productName);
-
     void postProduct(@Param("vo") ProductVO vo) throws Exception;
 
     ProductVO getProductContent(int productNo);

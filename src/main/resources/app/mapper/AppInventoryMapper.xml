@@ -15,7 +15,6 @@
     </insert>
 
 
-
     <!-- 구매 신청할 때 값 불러오기 -->
     <select id="getAllSuppliers" resultType="SupplierVO">
         SELECT * FROM supplier order by supplier_name
