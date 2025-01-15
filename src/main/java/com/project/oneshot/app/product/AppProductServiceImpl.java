@@ -52,9 +52,4 @@ public class AppProductServiceImpl implements AppProductService {
         return appProductMapper.getProductContent(productNo);
     }
 
-//    @Override
-//    public int checkProductName(String productName) {
-//        return appProductMapper.checkProductName(productName);
-//    }
-
 }

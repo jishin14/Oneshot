@@ -20,7 +20,7 @@ public class EmployeeDetailsService implements UserDetailsService {
     public EmployeeDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         System.out.println("form에서 전달된 아이디:" + username);
-
+        System.out.println("입력된 비밀번호: " + "010101");
 
         EmployeeAuthVO vo = employeeAuthMapper.login(Integer.parseInt(username));
 
@@ -31,8 +31,6 @@ public class EmployeeDetailsService implements UserDetailsService {
 
             return new EmployeeDetails(vo);
         }
-
-
         throw new UsernameNotFoundException("아이디 및 비밀번호를 확인하세요");
     }
 

@@ -15,7 +15,6 @@ public class ProductCriteria {
     private String startProductPrice;
     private String endProductPrice;
     private String productRemark;
-    //.........
 
 
     public ProductCriteria() {
